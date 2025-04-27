@@ -1,33 +1,19 @@
-inputvalue=input("문자열을 입력하시오.")
+inputvalue=input("문자열을 입력하시오.") #입력받기
 
-b=0
+stack=[]#stack이 반복문을 다 돌았을 때 []의 상태라면 1을 출력한다.
 
-i=0
 
-s=inputvalue[0]
-
-inputvalue=list(inputvalue)
-
-a=len(inputvalue)-1
-
-for j in range(1,a):
+for j in inputvalue:
     
-    j-=b
-
-    if inputvalue[i]==inputvalue[j]:
-  
-        inputvalue.remove(inputvalue[i])
-        inputvalue.remove(inputvalue[j-1])
-        a-=2
-        b+=2
-        i=0
-
+    if stack!=[] and stack[-1]==j:
+        stack.pop()
         
-    
+        
     else:
-        i+=1    
-        
-if inputvalue==[]:
-    print(1)
-else:
+        stack.append(j)
+
+if stack!=[]:
     print(0)
+    
+else:
+    print(1)
