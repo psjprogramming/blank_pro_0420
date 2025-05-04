@@ -1,0 +1,43 @@
+while 1:    
+    num=int(input())
+    if num<1 or num>10000:
+        print("다시 입력하시오.")
+    else:
+        break
+
+stack=[]
+results=[]
+
+for i in range(0,num,1):
+    input_value=input().split()
+    
+    if len(input_value)-1==1:
+        stack.append(input_value[1])
+        
+    else:
+        if input_value[0]=='pop':
+            if stack==[]:
+                results.append(-1)
+            else:
+                results.append(stack.pop())
+        
+        elif input_value[0]=='size':
+            results.append(len(stack))
+            
+        elif input_value[0]=='empty':
+            if stack==[]:
+                results.append(1)
+                
+            else:
+                results.append(0)
+                
+        elif input_value[0]=='top':
+            if stack==[]:
+                results.append(-1)
+            else:
+                results.append(stack[-1])
+                
+
+for j in range(0,len(results),1):
+    print('j',j)
+    print(results[j])
